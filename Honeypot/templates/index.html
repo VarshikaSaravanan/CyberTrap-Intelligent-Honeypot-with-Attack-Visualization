@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Honeypot Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <meta http-equiv="refresh" content="2">
+</head>
+<body>
+
+<h1>Honeypot Attack Dashboard</h1>
+
+<table>
+    <tr>
+        <th>Time</th>
+        <th>IP</th>
+        <th>Port</th>
+        <th>Input</th>
+    </tr>
+
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.time }}</td>
+        <td>{{ log.ip }}</td>
+        <td>{{ log.port }}</td>
+        <td>{{ log.data }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>
